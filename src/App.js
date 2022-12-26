@@ -1,5 +1,5 @@
 import React from 'react';
-import NewExpenseItem from './component/NewExpenseItem';
+import NewExpenseItem from './component/Expenses/NewExpenseItem';
 
 const getData = () => {
   return [
