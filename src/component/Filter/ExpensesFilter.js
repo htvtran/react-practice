@@ -3,11 +3,8 @@ import '../css/ExpensesFilter.css';
 
 function ExpensesFilter(props) {
   const selectedYearHandler = (event) => {
-    // setSelectedYear(value);
-    const selected = event.target.selectedOptions[0];
-    console.log(selected.value.toString());
-
-    props.onSelectedYear(selected.value.toString());
+    const selected = event.target.value;
+    props.onSelectedYear(selected.toString());
   };
 
   return (
@@ -20,7 +17,7 @@ function ExpensesFilter(props) {
           <option value="2020">2020</option>
           <option value="2019">2019</option>
         </select>
-        <span>Seleted state : {props.selectedYear}</span>
+        {/* <span>Seleted state : {props.selectedYear}</span> */}
       </div>
     </div>
   );
