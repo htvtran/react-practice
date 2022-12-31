@@ -1,5 +1,7 @@
 import React from 'react';
-import NewExpenseItem from './component/Expenses/NewExpenseItem';
+import Expense from './component/Expenses/Expense';
+
+import NewExpense from './component/NewExpense/NewExpense';
 
 const getData = () => {
   return [
@@ -11,7 +13,17 @@ const getData = () => {
 };
 
 function App() {
-  return <NewExpenseItem expense={getData()}></NewExpenseItem>;
+  const addExpenseHandler = (data) => {
+    console.log('in App.js');
+    console.dir(JSON.stringify(data, null, 2));
+  };
+
+  return (
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expense expense={getData()}></Expense>;
+    </div>
+  );
 }
 
 function addDays(currentDate, days) {
